@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool solve(){
+    double a,b,c,d,e;
+    cin>>a;
+    cin>>b;
+    cin>>c;
+    cin>>d;
+    e=100/(d*a*b*c);
+    e=roundf(e*100)/100;
+   //  cout<<e<<endl;
+    if((9.58-e)>1e-2){
+      return true;
+    }
+    else{
+        return false;
+    }
+}
+int main() {
+	int n;
+	cin>>n;
+	while(n--){
+	    if(solve()){
+	        cout<<"YES\n";
+	    }else{
+	        cout<<"NO\n";
+	    }
+	}
+	return 0;
+}

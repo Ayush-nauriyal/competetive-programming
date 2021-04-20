@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+bool solve(){
+   string s;
+   int a , b;
+   cin>>a;
+   cin>>b;
+   cin>>s;
+   int arr[a],t=0,total=0;
+   //writing an for loop to replace the * with the number of its positoin in another array
+   for (size_t i = 0; i < a; i++)
+   {
+       if(s[i]=='*'){
+           arr[i]=1;
+       }
+       else{
+           arr[i]=0;
+       }
+   }
+    for (size_t i = 0; i < a; i++)
+    {
+        if(arr[i]==0){
+            if(total>=b){
+                return true;
+            }
+            total=0;
+        }else{
+                total+=1;
+                if(total==b){
+                    return true;
+                }   
+            }
+    }
+    return false;
+}
+int main() {
+    int n;
+    cin>> n;
+    while(n--){
+        if(solve()){
+            cout<<"YES\n";
+        }else{
+            cout<<"NO\n";
+        }
+        // solve();
+    }
+    return 0;
+}
